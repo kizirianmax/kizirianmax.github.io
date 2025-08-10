@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kizirian Max – IA com Alma</title>
-  <meta name="description" content="Kizirian Max: uma IA acessível, humana e poderosa para impulsionar pessoas e negócios." />
+  <title>Kizirian Max — IA com alma para acelerar sua vida e seu negócio</title>
+  <meta name="description" content="Kizirian Max: automação inteligente, criatividade e segurança em um único assistente que fala sua língua e entrega resultado de verdade." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2246%22 fill=%22%2300ffd0%22/><text x=%2250%22 y=%2262%22 font-size=%2256%22 text-anchor=%22middle%22 font-family=%22Arial%2Csans-serif%22>KM</text></svg>">
 
   <style>
     :root{
@@ -13,152 +14,128 @@
       --muted:#99a3b2;
       --text:#e8f0ff;
       --brand:#00ffd0;
-      --brand-2:#59a5ff;
+      --brand2:#59a5ff;
       --danger:#ff4d6d;
       --radius:18px;
       --shadow:0 10px 30px rgba(0,0,0,.35);
+      --maxw:1100px;
+      --pad:18px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,'Noto Sans',sans-serif}
-    a{color:var(--brand);text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{width:min(1100px,90%);margin-inline:auto}
-    .btn{
-      display:inline-flex;gap:.6rem;align-items:center;justify-content:center;
-      padding:.9rem 1.1rem;border-radius:14px;border:1px solid rgba(255,255,255,.08);
-      color:#06131a;background:linear-gradient(90deg,var(--brand),var(--brand-2));
-      font-weight:700;box-shadow:var(--shadow);transition:transform .18s ease,filter .18s ease
+    html,body{margin:0;height:100%;scroll-behavior:smooth}
+    body{
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(0,255,208,.08), transparent 60%),
+                  radial-gradient(1200px 600px at 110% 10%, rgba(89,165,255,.08), transparent 60%),
+                  var(--bg);
+      color:var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.6;
     }
-    .btn:hover{transform:translateY(-2px);filter:saturate(1.15)}
-    .btn.ghost{background:transparent;color:var(--text);border-color:#2a3240}
-    .pill{font-size:.8rem;color:#051019;background:rgba(0,255,208,.15);border:1px solid rgba(0,255,208,.35);padding:.35rem .7rem;border-radius:999px;display:inline-flex;gap:.4rem;align-items:center}
-    header.nav{
-      position:sticky;top:0;z-index:20;background:linear-gradient(180deg,rgba(11,14,18,.9),rgba(11,14,18,.75),transparent);
-      -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.05)
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+    header{
+      position:sticky; top:0; z-index:10;
+      background:rgba(11,14,18,.65); backdrop-filter:saturate(140%) blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.05);
     }
-    .nav .row{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
-    .brand{display:flex;gap:.65rem;align-items:center;font-weight:800;letter-spacing:.3px}
-    .brand .logo{width:34px;height:34px;border-radius:10px;background:radial-gradient(120% 120% at -10% -20%, var(--brand) 0%, transparent 60%),radial-gradient(120% 120% at 110% 140%, var(--brand-2) 0%, transparent 60%),#0c1924;border:1px solid #2a3240;box-shadow:var(--shadow)}
-    .nav a{color:var(--muted);font-weight:600}
-    .nav .links{display:flex;gap:1.1rem;align-items:center}
-    .nav .menu{display:none}
-    @media (max-width:760px){
-      .nav .links{display:none}
-      .nav .menu{display:inline-flex}
+    .topbar{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.3px;}
+    .brand-badge{
+      width:40px; height:40px; border-radius:12px;
+      background:linear-gradient(135deg, #0ef 0%, #0f7 50%, #0ef 100%);
+      box-shadow:0 6px 18px rgba(0,255,208,.25);
     }
-
-    /* HERO */
-    .hero{padding:4.5rem 0 3rem;border-bottom:1px solid rgba(255,255,255,.06);background:
-      radial-gradient(1200px 600px at 120% -40%, rgba(0,255,208,.10), transparent 60%),
-      radial-gradient(900px 500px at -20% -40%, rgba(89,165,255,.11), transparent 60%)
+    nav a{opacity:.85; margin:0 8px; padding:8px 10px; border-radius:10px;}
+    nav a:hover{background:rgba(255,255,255,.06); opacity:1}
+    .cta{
+      display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:14px;
+      background:linear-gradient(90deg, var(--brand), var(--brand2)); color:#001018; font-weight:800;
+      box-shadow:0 10px 24px rgba(0,255,208,.2);
     }
-    .hero .row{display:grid;grid-template-columns:1.2fr .9fr;gap:2.2rem}
-    .hero h1{font-size:clamp(1.8rem,5vw,3.1rem);line-height:1.08;margin:.7rem 0 1rem}
-    .hero p{color:#c5cfdd;font-size:1.05rem}
-    .cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.3rem}
-    .glow-card{
-      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow);
-      padding:1rem
+    .cta.secondary{background:#151c27; color:var(--text); border:1px solid rgba(255,255,255,.08); box-shadow:none}
+    .hero{
+      padding:64px 0 28px;
     }
-    .stat{display:grid;grid-template-columns:52px 1fr;gap:1rem;align-items:center}
-    .stat .icon{width:52px;height:52px;border-radius:14px;background:#0e1621;display:grid;place-items:center;border:1px solid #243041}
-    .stat b{font-size:1.1rem}
-    @media (max-width:900px){.hero .row{grid-template-columns:1fr}.hero .visual{order:-1}}
-
-    /* SECTIONS */
-    section{padding:3.8rem 0}
-    h2.section-title{font-size:clamp(1.4rem,3.6vw,2.2rem);margin:0 0 1.2rem}
-    p.lead{color:#c7d3e4}
-    .grid{display:grid;gap:1.2rem}
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    @media (max-width:900px){.grid.cols-3{grid-template-columns:1fr}}
-    .card{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:1.3rem;box-shadow:var(--shadow)}
-    .card h3{margin:.2rem 0 .3rem}
-    .muted{color:var(--muted)}
-
-    /* FEATURE STRIP */
-    .strip{display:grid;grid-template-columns:1.1fr 1fr;gap:1.8rem;align-items:center}
-    .checks{display:grid;gap:.7rem}
-    .check{display:flex;align-items:flex-start;gap:.7rem}
-    .check i{color:var(--brand)}
-    @media (max-width:900px){.strip{grid-template-columns:1fr}}
-
-    /* FOOTER */
-    footer{border-top:1px solid rgba(255,255,255,.06);padding:2.2rem 0;color:#bac6d6}
-    footer .row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-    .tiny{font-size:.9rem;color:#91a1b5}
-
-    /* Small helpers */
-    .sp-1{height:1rem}
-    .sp-2{height:2rem}
+    .status{
+      display:inline-flex; align-items:center; gap:10px; padding:8px 12px; border-radius:999px;
+      background:#0f1420; border:1px solid rgba(255,255,255,.06); color:#b7c6d9; font-size:.95rem;
+    }
+    .hero-grid{
+      display:grid; gap:26px; grid-template-columns:1.1fr .9fr; align-items:center;
+      background:rgba(17,22,30,.7); border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius); padding:26px; box-shadow:var(--shadow);
+    }
+    .hero h1{font-size:clamp(28px,4.2vw,46px); line-height:1.15; margin:10px 0 12px}
+    .hero p.lead{color:var(--muted); font-size:clamp(16px,1.9vw,19px); margin:0 0 18px}
+    .btns{display:flex; flex-wrap:wrap; gap:12px}
+    .panel{
+      background:rgba(17,22,30,.7); border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius); box-shadow:var(--shadow); padding:22px;
+    }
+    .mock{
+      height:280px; border-radius:14px; background:
+        linear-gradient(180deg, rgba(0,255,208,.12), transparent 40%),
+        linear-gradient(180deg, rgba(89,165,255,.12), transparent 60%),
+        #0c1118;
+      border:1px solid rgba(255,255,255,.06);
+      display:grid; place-items:center; color:#bcd6ff; text-align:center; padding:12px;
+    }
+    section{padding:36px 0}
+    .grid3{display:grid; gap:16px; grid-template-columns:repeat(3,1fr)}
+    .card{background:rgba(17,22,30,.7); border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:18px}
+    .card h3{margin:0 0 6px}
+    .card p{margin:0; color:var(--muted)}
+    .badge{display:inline-block; font-size:.85rem; color:#001018; background:linear-gradient(90deg, var(--brand), var(--brand2)); padding:6px 10px; border-radius:999px; font-weight:800}
+    .plans{display:grid; gap:16px; grid-template-columns:repeat(3,1fr)}
+    .price{font-size:26px; font-weight:900}
+    footer{padding:30px 0 60px; color:#94a3b8}
+    .mini{font-size:.9rem}
     .center{text-align:center}
-    .right{text-align:right}
-    .badge{display:inline-flex;gap:.4rem;align-items:center;padding:.35rem .6rem;border-radius:999px;background:#0f1622;border:1px solid #2a3240;color:#b5c5db;font-size:.78rem}
-    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+    @media (max-width:900px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid3, .plans{grid-template-columns:1fr}
+      nav{display:none}
+    }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <header class="nav">
-    <div class="container row">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        Kizirian <span style="color:var(--brand)">Max</span>
-      </div>
-
-      <nav class="links">
-        <a href="#sobre">Sobre</a>
-        <a href="#recursos">Recursos</a>
-        <a href="#planos">Planos</a>
-        <a href="#contato" class="btn ghost">Contato</a>
-        <a href="#comece" class="btn">Começar agora</a>
-      </nav>
-
-      <button class="menu btn ghost" onclick="toggleMenu()">Menu</button>
+<header>
+  <div class="wrap topbar">
+    <div class="brand">
+      <span class="brand-badge" aria-hidden="true"></span>
+      <span>Kizirian&nbsp;<span style="color:var(--brand)">Max</span></span>
     </div>
-  </header>
 
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#planos">Planos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main>
   <!-- HERO -->
   <section class="hero">
-    <div class="container">
-      <div class="row">
+    <div class="wrap">
+      <div class="hero-grid">
         <div>
-          <span class="pill">🚀 Nova geração de IA pessoal</span>
+          <span class="status">● status: online</span>
           <h1>Kizirian Max — IA com alma para acelerar sua vida e seu negócio</h1>
-          <p class="lead">
-            Combine automação inteligente, criatividade e segurança em um único assistente
-            que aprende com você, fala sua língua e entrega resultado de verdade.
-          </p>
-          <div class="cta" id="comece">
-            <a class="btn" href="#planos">Quero experimentar</a>
-            <a class="btn ghost" href="#recursos">Ver recursos</a>
-          </div>
-          <div class="sp-2"></div>
-          <div class="grid cols-3">
-            <div class="glow-card stat">
-              <div class="icon">⚡</div>
-              <div><b>Automação em minutos</b><div class="muted">Fluxos prontos e fáceis</div></div>
-            </div>
-            <div class="glow-card stat">
-              <div class="icon">🔒</div>
-              <div><b>Privacidade em primeiro</b><div class="muted">Seus dados, suas regras</div></div>
-            </div>
-            <div class="glow-card stat">
-              <div class="icon">🌎</div>
-              <div><b>Português natural</b><div class="muted">Fala claro e direto</div></div>
-            </div>
+          <p class="lead">Automação inteligente, criatividade e segurança em um único assistente que aprende com você, fala sua língua e entrega resultado de verdade.</p>
+          <div class="btns">
+            <a class="cta" href="#contato">Quero experimentar</a>
+            <a class="cta secondary" href="#recursos">Ver recursos</a>
           </div>
         </div>
 
-        <div class="visual">
-          <div class="card center" style="padding:1.6rem">
-            <span class="badge mono">status • online</span>
-            <div class="sp-1"></div>
-            <img alt="Visualização do painel Kizirian Max" src="https://images.unsplash.com/photo-1551281044-8f785ba67e45?q=80&w=1200&auto=format&fit=crop" style="border-radius:14px;border:1px solid #223042;box-shadow:var(--shadow)">
-            <div class="sp-1"></div>
-            <p class="muted tiny">Interface ilustrativa. Sua versão será personalizada.</p>
+        <div class="panel">
+          <div class="mock">
+            <div>
+              <div style="font-weight:800; margin-bottom:8px;">Visualização do painel Kizirian Max</div>
+              <div class="mini">Interface ilustrativa. Sua versão será personalizada.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -167,64 +144,39 @@
 
   <!-- SOBRE -->
   <section id="sobre">
-    <div class="container">
-      <h2 class="section-title">Por que “IA com alma”?</h2>
-      <p class="lead">Tecnologia é só ferramenta. O que importa é como ela melhora sua vida. O Kizirian Max foi pensado para
-        ser um parceiro que entende contexto, prioriza segurança e cria soluções do seu jeito.</p>
-
-      <div class="sp-2"></div>
-
-      <div class="strip">
-        <div class="card">
-          <h3>Feito para pessoas reais</h3>
-          <p class="muted">Processos acessíveis, linguagem simples e resultados práticos. Sem complicação.</p>
-          <div class="checks">
-            <div class="check"><i>✅</i><span>Responde em português claro e humano</span></div>
-            <div class="check"><i>✅</i><span>Memória opcional para continuar de onde parou</span></div>
-            <div class="check"><i>✅</i><span>Atalhos rápidos para tarefas repetitivas</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Segurança e controle</h3>
-          <p class="muted">Você define o que é guardado, por quanto tempo e com quem é compartilhado.</p>
-          <div class="checks">
-            <div class="check"><i>🔐</i><span>Criptografia em trânsito e boas práticas</span></div>
-            <div class="check"><i>🗂️</i><span>Áreas separadas: pessoal, trabalho e equipe</span></div>
-            <div class="check"><i>🧭</i><span>Transparência sobre como as respostas são geradas</span></div>
-          </div>
-        </div>
+    <div class="wrap grid3">
+      <div class="card">
+        <span class="badge">Nova geração de IA pessoal</span>
+        <h3>Assistência que entende contexto</h3>
+        <p>Lembra preferências, se adapta ao seu estilo e mantém tudo organizado.</p>
+      </div>
+      <div class="card">
+        <h3>Automação em minutos</h3>
+        <p>Fluxos prontos para WhatsApp, e‑mail, planilhas e redes sociais.</p>
+      </div>
+      <div class="card">
+        <h3>Privacidade primeiro</h3>
+        <p>Você escolhe o que guardar. Dados criptografados e controle transparente.</p>
       </div>
     </div>
   </section>
 
   <!-- RECURSOS -->
   <section id="recursos">
-    <div class="container">
-      <h2 class="section-title">O que o Kizirian Max faz por você</h2>
-      <div class="grid cols-3">
+    <div class="wrap">
+      <h2>Recursos</h2>
+      <div class="grid3">
         <div class="card">
-          <h3>Assistente Pessoal</h3>
-          <p class="muted">Organiza ideias, cria textos, resume documentos e gera respostas inteligentes.</p>
+          <h3>Atendente 24/7</h3>
+          <p>Responde clientes com seu tom de voz, captura leads e registra tudo.</p>
         </div>
         <div class="card">
-          <h3>Automação Simples</h3>
-          <p class="muted">Rotinas de “se acontecer X, faça Y” sem código – do WhatsApp ao e‑mail.</p>
+          <h3>Copiloto de criação</h3>
+          <p>Posts, roteiros e artes com revisão automática e calendário editorial.</p>
         </div>
         <div class="card">
-          <h3>Criação de Conteúdo</h3>
-          <p class="muted">Landing pages, posts e roteiros com seu tom de voz. Exportação rápida.</p>
-        </div>
-        <div class="card">
-          <h3>Análise Inteligente</h3>
-          <p class="muted">Transforma dados brutos em decisões. Respostas com passo a passo.</p>
-        </div>
-        <div class="card">
-          <h3>Conversa Natural</h3>
-          <p class="muted">Entende contexto e mantém o fio da conversa. Nada de respostas frias.</p>
-        </div>
-        <div class="card">
-          <h3>Extensível</h3>
-          <p class="muted">Pronto para integrar com GitHub Pages, Vercel, Firebase e muito mais.</p>
+          <h3>Relatórios e insights</h3>
+          <p>Métricas claras e recomendações práticas para decidir com confiança.</p>
         </div>
       </div>
     </div>
@@ -232,48 +184,26 @@
 
   <!-- PLANOS -->
   <section id="planos">
-    <div class="container">
-      <h2 class="section-title">Planos</h2>
-      <p class="lead">Comece grátis. Quando quiser mais recursos, mude de plano sem perder nada.</p>
-      <div class="sp-1"></div>
-      <div class="grid cols-3">
+    <div class="wrap">
+      <h2>Planos</h2>
+      <div class="plans">
         <div class="card">
-          <span class="badge">Iniciante</span>
-          <h3 style="margin:.5rem 0">R$ 0/mês</h3>
-          <p class="muted">Para testar com tudo que precisa para começar.</p>
-          <ul class="muted">
-            <li>Chat ilimitado</li>
-            <li>Modelos prontos</li>
-            <li>Sem cartão</li>
-          </ul>
-          <div class="sp-1"></div>
-          <a href="#contato" class="btn ghost">Começar grátis</a>
+          <h3>Starter</h3>
+          <p class="price">R$ 0</p>
+          <p class="mini">Ideal para testar.</p>
+          <a class="cta secondary" href="#contato">Começar</a>
         </div>
-
-        <div class="card" style="border-color:rgba(0,255,208,.35)">
-          <span class="badge" style="background:rgba(0,255,208,.15);border-color:rgba(0,255,208,.4);color:#0ef">Profissional</span>
-          <h3 style="margin:.5rem 0">R$ 49/mês</h3>
-          <p class="muted">Para criadores e negócios que precisam de automação.</p>
-          <ul class="muted">
-            <li>Memória pessoal</li>
-            <li>Automação “se X então Y”</li>
-            <li>Exportações premium</li>
-          </ul>
-          <div class="sp-1"></div>
-          <a href="#contato" class="btn">Quero este</a>
+        <div class="card" style="border-color:rgba(0,255,208,.3)">
+          <h3>Pro</h3>
+          <p class="price">R$ 79/mês</p>
+          <p class="mini">Para quem quer escala.</p>
+          <a class="cta" href="#contato">Quero o Pro</a>
         </div>
-
         <div class="card">
-          <span class="badge">Time</span>
-          <h3 style="margin:.5rem 0">Sob consulta</h3>
-          <p class="muted">Para equipes, com permissões e áreas privadas.</p>
-          <ul class="muted">
-            <li>Colaboração</li>
-            <li>Auditoria e segurança</li>
-            <li>Suporte prioritário</li>
-          </ul>
-          <div class="sp-1"></div>
-          <a href="#contato" class="btn ghost">Falar com a gente</a>
+          <h3>Empresas</h3>
+          <p class="price">Sob consulta</p>
+          <p class="mini">Time, integrações e suporte dedicado.</p>
+          <a class="cta secondary" href="#contato">Falar com time</a>
         </div>
       </div>
     </div>
@@ -281,64 +211,28 @@
 
   <!-- CONTATO -->
   <section id="contato">
-    <div class="container">
-      <h2 class="section-title">Fale com a gente</h2>
-      <p class="lead">Quer testar, dar feedback ou fechar parceria? Envie uma mensagem:</p>
-      <div class="sp-1"></div>
-      <form class="card" onsubmit="sendMsg(event)">
-        <div class="grid" style="grid-template-columns:1fr 1fr;gap:1rem">
-          <div>
-            <label class="tiny">Seu nome</label>
-            <input type="text" required placeholder="Seu nome" class="input">
-          </div>
-          <div>
-            <label class="tiny">Seu e‑mail</label>
-            <input type="email" required placeholder="voce@email.com" class="input">
-          </div>
+    <div class="wrap">
+      <div class="panel center">
+        <h2>Fale com a gente</h2>
+        <p class="mini">Preferência: WhatsApp. Resposta rápida.</p>
+        <div class="btns" style="justify-content:center">
+          <a class="cta" href="https://wa.me/5500000000000?text=Quero%20testar%20o%20Kizirian%20Max" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          <a class="cta secondary" href="mailto:contato@seu-dominio.com">contato@seu-dominio.com</a>
         </div>
-        <div class="sp-1"></div>
-        <div>
-          <label class="tiny">Mensagem</label>
-          <textarea required rows="5" placeholder="Como posso ajudar?" class="input"></textarea>
-        </div>
-        <div class="sp-1"></div>
-        <button class="btn">Enviar</button>
-        <p class="muted tiny">*Este formulário é ilustrativo. Conectaremos a um serviço real na etapa de integração.</p>
-      </form>
+      </div>
     </div>
   </section>
+</main>
 
-  <footer>
-    <div class="container row">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        Kizirian <span style="color:var(--brand)">Max</span>
-      </div>
-      <div class="tiny">© <span id="y"></span> Kizirian Max. Feito com 💚 no Brasil.</div>
-    </div>
-  </footer>
+<footer>
+  <div class="wrap mini center">
+    © <span id="y"></span> Kizirian Max • Feito com carinho no Brasil
+  </div>
+</footer>
 
-  <style>
-    /* Inputs minimalistas */
-    .input{
-      width:100%;padding: .9rem 1rem;border-radius:12px;background:#0e1420;
-      border:1px solid #243041;color:var(--text);outline:none
-    }
-    .input:focus{border-color:#375175;box-shadow:0 0 0 3px rgba(89,165,255,.18)}
-    textarea.input{resize:vertical}
-  </style>
-
-  <script>
-    const y = document.getElementById('y'); y.textContent = new Date().getFullYear();
-
-    function toggleMenu(){
-      const links = document.querySelector('.nav .links');
-      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
-    }
-    function sendMsg(e){
-      e.preventDefault();
-      alert('Obrigado! Sua mensagem foi registrada no protótipo. Na próxima fase conectaremos um serviço de e‑mail/CRM.')
-    }
-  </script>
+<script>
+  // Atualiza ano no rodapé
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
