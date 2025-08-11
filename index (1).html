@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kizirian Max — IA com alma para acelerar sua vida e seu negócio</title>
+  <meta name="description" content="Automação inteligente, criatividade e segurança em um único assistente que aprende com você, fala sua língua e entrega resultado de verdade.">
+
+  <!-- Segurança em página estática (melhor possível no GitHub Pages sem backend) -->
+  <!-- OBS: O ideal é configurar estes cabeçalhos no servidor/CDN mais tarde. -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    img-src 'self' data:;
+    connect-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline';
+    font-src 'none';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    upgrade-insecure-requests;
+    block-all-mixed-content">
+  <meta name="referrer" content="no-referrer">
+  <!-- Para testes, se não quiser que o site indexe agora, deixe ativado.
+       Quando for lançar, pode remover a linha abaixo. -->
+  <!-- <meta name="robots" content="noindex, nofollow"> -->
+
+  <!-- Ícone inline para não depender de CDN -->
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><defs><linearGradient id="g" x1="0" x2="1" y1="1" y2="0"><stop stop-color="%2300ffb1"/><stop offset="1" stop-color="%2300d0ff"/></linearGradient></defs><rect width="128" height="128" rx="28" fill="url(%23g)"/><text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="62" fill="#06131a">K</text></svg>'>
+  <style>
+    :root{
+      --bg:#0b0e12;
+      --panel:#11161e;
+      --muted:#99a3b2;
+      --text:#e8f0ff;
+      --brand:#00ffd0;
+      --brand-2:#59a5ff;
+      --danger:#ff4d6d;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --line:1px solid #1c2532;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
+    a{color:var(--brand);text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(1100px,92%);margin-inline:auto}
+    header{
+      position:sticky;top:0;z-index:10;
+      background:linear-gradient(180deg,#0b0e12 0%,rgba(11,14,18,.8) 85%,rgba(11,14,18,0) 100%);
+      backdrop-filter: blur(6px);
+      border-bottom: var(--line);
+    }
+    .nav{display:flex;align-items:center;gap:.9rem;padding:.9rem 0}
+    .logo{display:flex;align-items:center;gap:.65rem;font-weight:800}
+    .logo-badge{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#00ffb1,#00d0ff);box-shadow:var(--shadow)}
+    .logo .brand{color:var(--brand)}
+    .spacer{flex:1}
+    .menu a{padding:.4rem .7rem;border-radius:10px;color:var(--muted)}
+    .menu a:hover{background:#0f1622;color:var(--text)}
+    .btns{display:flex;gap:.5rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.9rem 1.2rem;border-radius:14px;border:1px solid #182232;background:linear-gradient(90deg,#06131a,#0c1521);color:#cfe8ff;font-weight:700;box-shadow:var(--shadow);transition:transform .15s ease, filter .15s ease}
+    .btn:hover{transform:translateY(-2px);filter:saturate(120%)}
+    .btn.primary{background:linear-gradient(90deg,#00ffb1,#00d0ff);color:#06131a}
+    .btn.secondary{background:transparent}
+    .section{padding:2.5rem 0;border-top:var(--line)}
+    .hero .panel{
+      background:radial-gradient(100% 160% at 0% 0%,rgba(0,255,209,.12) 0,rgba(0,208,255,.08) 25%,rgba(0,0,0,.0) 70%), #0d141e;
+      border:1px solid #0e1a28;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.2rem 1.2rem;margin:1.2rem 0;
+    }
+    .status{display:inline-flex;align-items:center;gap:.55rem;padding:.5rem .9rem;border-radius:999px;background:#0f1a25;border:1px solid #182232;color:#b7c7d9;font-size:.92rem}
+    h1{font-size:clamp(1.8rem,3.2vw + 1.1rem,2.6rem);line-height:1.15;margin:1rem 0 .6rem}
+    p.lead{color:#c9d7e6;margin:.6rem 0 1.2rem}
+    .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
+    .card{background:linear-gradient(180deg,#0d141e,#0a1118);border:1px solid #0e1a28;border-radius:16px;padding:1.1rem;box-shadow:var(--shadow)}
+    .card h3{margin:.2rem 0 .3rem}
+    .mini{color:var(--muted);font-size:.95rem}
+    footer{border-top:var(--line);padding:1.4rem 0;color:#8fa3b8}
+    .center{text-align:center}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="logo">
+        <div class="logo-badge" aria-hidden="true"></div>
+        <span>Kizirian <span class="brand">Max</span></span>
+      </div>
+      <div class="spacer"></div>
+      <nav class="menu" aria-label="Principal">
+        <a href="#sobre" rel="nofollow">Sobre</a>
+        <a href="#recursos" rel="nofollow">Recursos</a>
+        <a href="#planos" rel="nofollow">Planos</a>
+        <a href="#contato" rel="nofollow">Contato</a>
+      </nav>
+      <div class="btns">
+        <a class="btn secondary" href="#recursos" rel="nofollow">Ver recursos</a>
+        <a class="btn primary" href="https://wa.me/5511991073704?text=Ol%C3%A1%20Kizi!%20Quero%20testar%20o%20assistente%20Kizirian%20Max." target="_blank" rel="noopener noreferrer nofollow">Quero experimentar</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section hero" id="sobre">
+      <div class="wrap">
+        <div class="panel">
+          <span class="status" aria-live="polite">
+            <span style="width:10px;height:10px;border-radius:50%;background:#16d46b;display:inline-block"></span>
+            status · online
+          </span>
+          <h1>Kizirian Max — IA com alma para acelerar sua vida e seu negócio</h1>
+          <p class="lead">Automação inteligente, criatividade e segurança em um único assistente que aprende com você, fala sua língua e entrega resultado de verdade.</p>
+          <div class="btns">
+            <a class="btn primary" href="https://wa.me/5511991073704?text=Ol%C3%A1%20Kizi!%20Quero%20testar%20o%20assistente%20Kizirian%20Max." target="_blank" rel="noopener noreferrer nofollow">Quero experimentar</a>
+            <a class="btn secondary" href="#recursos" rel="nofollow">Ver recursos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="recursos">
+      <div class="wrap">
+        <h2>Recursos principais</h2>
+        <div class="cols" role="list">
+          <div class="card" role="listitem">
+            <h3>Automação em minutos</h3>
+            <p class="mini">Fluxos prontos para WhatsApp, e‑mail e tarefas do dia a dia. Zero código.</p>
+          </div>
+          <div class="card" role="listitem">
+            <h3>Privacidade primeiro</h3>
+            <p class="mini">Coleta mínima de dados, isolamento de sessões e <em>opt‑out</em> fácil.</p>
+          </div>
+          <div class="card" role="listitem">
+            <h3>IA que aprende com você</h3>
+            <p class="mini">Memória opcional, linguagem natural e personalização profunda.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="planos">
+      <div class="wrap">
+        <h2>Planos (exemplos)</h2>
+        <div class="cols">
+          <div class="card">
+            <h3>Starter</h3>
+            <p class="mini">Ideal para testar e validar.</p>
+            <a class="btn secondary" href="#contato" rel="nofollow">Quero saber mais</a>
+          </div>
+          <div class="card">
+            <h3>Pro</h3>
+            <p class="mini">Para quem quer escalar com segurança.</p>
+            <a class="btn secondary" href="#contato" rel="nofollow">Falar com a equipe</a>
+          </div>
+          <div class="card">
+            <h3>Empresas</h3>
+            <p class="mini">Time, integrações e compliance.</p>
+            <a class="btn secondary" href="#contato" rel="nofollow">Solicitar proposta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato">
+      <div class="wrap">
+        <h2>Fale com a gente</h2>
+        <p class="mini">Preferência: WhatsApp</p>
+        <div class="btns">
+          <a class="btn primary" href="https://wa.me/5511991073704?text=Ol%C3%A1%20Kizi!%20Quero%20come%C3%A7ar%20agora." target="_blank" rel="noopener noreferrer nofollow">Abrir WhatsApp</a>
+          <a class="btn secondary" href="tel:+5511991073704" rel="nofollow">Ligar</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap center">
+      © <span id="y">2025</span> Kizirian Max • Feito com foco em segurança e privacidade.
+      <noscript><div class="mini">Ative o JavaScript para melhor experiência.</div></noscript>
+    </div>
+  </footer>
+</body>
+</html>
