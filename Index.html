@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kizirian Max — IA com alma para acelerar sua vida e seu negócio</title>
+  <meta name="description" content="Automação inteligente, criatividade e segurança em um único assistente que aprende com você, fala sua língua e entrega resultado de verdade." />
+  <meta name="keywords" content="Kizirian Max, IA pessoal, automação, produtividade, assistente, WhatsApp" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kizirian Max — IA com alma" />
+  <meta property="og:description" content="Automação inteligente, criatividade e segurança em um único assistente." />
+  <meta property="og:url" content="https://kizirianmax.github.io/" />
+  <meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><rect width='100%' height='100%' fill='%230b0e12'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%2300ffd0' font-family='Arial' font-size='64'>Kizirian Max</text></svg>">
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Desativa detecção automática de telefone no iOS (vamos controlar o link) -->
+  <meta name="format-detection" content="telephone=no">
+
+  <style>
+    :root{
+      --bg:#0b0e12; --panel:#11161e; --muted:#99a3b2; --text:#e8f0ff;
+      --brand:#00ffd0; --brand2:#59a5ff; --danger:#ff4d6d;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    /* Base */
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif;-webkit-tap-highlight-color:transparent}
+    img{max-width:100%;display:block}
+    a{color:var(--brand);text-decoration:none}
+    .container{width:min(1100px,90%);margin-inline:auto}
+    /* Hero */
+    header{position:sticky;top:0;z-index:5;background:linear-gradient(180deg,rgba(11,14,18,.9),rgba(11,14,18,.6) 60%,transparent);backdrop-filter:saturate(1.2) blur(8px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .logo{display:flex;align-items:center;gap:.8rem}
+    .badge{width:36px;height:36px;border-radius:12px;background:radial-gradient(100% 100% at 30% 30%,#00ffd0 0%,#1affb6 30%,#0bff80 55%,#003);box-shadow:0 0 20px rgba(0,255,208,.35)}
+    .brand{font-weight:800;letter-spacing:.2px}
+    .brand i{color:var(--brand)}
+    .hero{padding:28px 0 8px}
+    .panel{background:linear-gradient(180deg,#0f131a,#0b0f15 60%);border:1px solid #141b24;border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
+    .status{display:inline-flex;align-items:center;gap:.5rem;background:#0f1720;border:1px solid #16202b;color:#b8c4d6;border-radius:999px;padding:.45rem .9rem;font-size:.9rem}
+    .dot{width:8px;height:8px;border-radius:999px;background:#24d37a;box-shadow:0 0 10px #24d37a}
+    h1{font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.15;margin:18px 0 8px}
+    p.lead{color:var(--muted);font-size:clamp(1rem,1.6vw,1.125rem)}
+    .btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:18px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.95rem 1.25rem;border-radius:14px;border:1px solid #16202b;background:linear-gradient(90deg,#06131a,#0b1823);color:#eaf2ff;font-weight:700;box-shadow:var(--shadow);transform:translateZ(0)}
+    .btn.primary{background:linear-gradient(90deg,#00ffd0,#59a5ff)}
+    .btn:hover{transform:translateY(-1px)}
+    /* Seções */
+    section{padding:28px 0}
+    .card{background:linear-gradient(180deg,#0f131a,#0b0f15 60%);border:1px solid #141b24;border-radius:16px;box-shadow:var(--shadow);padding:18px}
+    .grid{display:grid;gap:18px}
+    @media (min-width:840px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+    footer{padding:28px 0;color:#8fa3b8}
+    /* Aviso/Watermark invisível (anti-cópia leve) */
+    .wm{position:fixed;inset:0;pointer-events:none;opacity:.06;background:
+      repeating-linear-gradient(90deg,transparent 0 240px,rgba(255,255,255,.04) 240px 242px),
+      repeating-linear-gradient(0deg,transparent 0 240px,rgba(255,255,255,.04) 240px 242px);
+      mix-blend-mode:overlay;z-index:0}
+    .guard{position:fixed;inset:0;background:rgba(11,14,18,.96);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:9999}
+    .guard .box{background:#0f131a;border:1px solid #202938;border-radius:16px;padding:22px 18px;box-shadow:var(--shadow);max-width:560px;text-align:center}
+    .guard h3{margin:0 0 6px}
+    .guard p{color:#b8c4d6;margin:0}
+    /* Anti seleção/drag no conteúdo */
+    main, header, footer, section, .panel, .card, h1, h2, p, .btn, .logo, .status {
+      -webkit-user-select:none; user-select:none; -webkit-user-drag:none;
+    }
+    /* Acessibilidade: inputs (se existirem) podem selecionar */
+    input,textarea{user-select:text}
+    /* No-JS overlay */
+    noscript .needjs{display:none}
+    noscript .nojs{display:block}
+    .nojs{display:none;position:fixed;inset:0;z-index:99999;background:#0b0e12;color:#e8f0ff;padding:24px}
+  </style>
+</head>
+<body>
+  <noscript>
+    <div class="nojs">
+      <h2>Ative o JavaScript para visualizar este site</h2>
+      <p>O site usa JavaScript para segurança e experiência. Habilite o JS e recarregue.</p>
+    </div>
+  </noscript>
+
+  <!-- Marca d’água sutil -->
+  <div class="wm needjs" aria-hidden="true"></div>
+
+  <header class="needjs">
+    <div class="container nav">
+      <div class="logo">
+        <span class="badge" aria-hidden="true"></span>
+        <div class="brand">Kizirian <i>Max</i></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="needjs">
+    <section class="hero">
+      <div class="container">
+        <div class="panel">
+          <span class="status"><span class="dot"></span> status · online</span>
+          <h1>Kizirian Max — IA com alma para acelerar sua vida e seu negócio</h1>
+          <p class="lead">Automação inteligente, criatividade e segurança em um único assistente que aprende com você, fala sua língua e entrega resultado de verdade.</p>
+          <div class="btns">
+            <a class="btn primary" href="https://wa.me/5511991073704" rel="noopener">Quero experimentar</a>
+            <a class="btn" href="#recursos">Ver recursos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="recursos">
+      <div class="container grid cols-3">
+        <div class="card"><h3>Automação rápida</h3><p>Fluxos prontos em minutos, com zero código.</p></div>
+        <div class="card"><h3>Privacidade</h3><p>Suas lógicas sensíveis ficam no backend. Aqui só a vitrine.</p></div>
+        <div class="card"><h3>Resultados</h3><p>Mensurável: tempo economizado, tarefas concluídas e satisfação.</p></div>
+      </div>
+    </section>
+
+    <section id="planos">
+      <div class="container grid cols-3">
+        <div class="card">
+          <h3>Starter</h3>
+          <p class="price">R$ 0</p>
+          <p class="mini">Ideal para testes.</p>
+          <a class="btn" href="https://wa.me/5511991073704" rel="noopener">Fale no WhatsApp</a>
+        </div>
+        <div class="card">
+          <h3>Pro</h3>
+          <p class="price">R$ 79/mês</p>
+          <p class="mini">Para quem quer escalar.</p>
+          <a class="btn" href="https://wa.me/5511991073704" rel="noopener">Fale no WhatsApp</a>
+        </div>
+        <div class="card">
+          <h3>Empresas</h3>
+          <p class="price">Sob consulta</p>
+          <p class="mini">Integrações e SLAs.</p>
+          <a class="btn" href="mailto:contato@exemplo.com">Contato por e‑mail</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <div class="card">
+          <h2>Fale com a gente</h2>
+          <p class="mini">Preferência: WhatsApp</p>
+          <div class="btns" style="justify-content:flex-start">
+            <a class="btn primary" href="https://wa.me/5511991073704" rel="noopener">WhatsApp</a>
+            <a class="btn" href="mailto:contato@exemplo.com">E‑mail</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="needjs">
+    <div class="container" style="text-align:center">
+      © <span id="y"></span> Kizirian Max • Feito com cuidado
+    </div>
+  </footer>
+
+  <!-- Overlay quando DevTools é detectado -->
+  <div id="guard" class="guard" role="dialog" aria-modal="true" aria-live="assertive">
+    <div class="box">
+      <h3>Área protegida</h3>
+      <p>Tentativa de inspeção detectada. Para sua segurança e da plataforma, o conteúdo foi ocultado.</p>
+    </div>
+  </div>
+
+  <script>
+    // Ano no rodapé
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Bloqueios básicos
+    const kill = ev => { ev.preventDefault(); ev.stopPropagation(); return false; };
+
+    // Bloqueia menu de contexto (clique direito)
+    addEventListener('contextmenu', kill, {capture:true});
+
+    // Bloqueia arrastar/soltar
+    addEventListener('dragstart', kill, true);
+    addEventListener('drop', kill, true);
+
+    // Bloqueia teclas comuns de cópia/inspeção/salvar
+    addEventListener('keydown', (e) => {
+      const k = (e.key||'').toLowerCase();
+      if (
+        k === 'f12' ||
+        (e.ctrlKey && ['u','s','p','c','x','v','a'].includes(k)) ||
+        (e.metaKey && ['u','s','p','c','x','v','a'].includes(k)) ||
+        (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(k)) ||
+        (e.metaKey && e.altKey && ['i','j','c'].includes(k))
+      ) { kill(e); }
+    }, true);
+
+    // Anti seleção global (volta a permitir dentro de inputs, se existirem)
+    const noSelectCSS = `
+      *::selection { background: transparent !important; }
+      ::-moz-selection { background: transparent !important; }
+      body *:not(input):not(textarea) { -webkit-user-select: none !important; user-select: none !important; }
+    `;
+    const style = document.createElement('style'); style.textContent = noSelectCSS; document.head.appendChild(style);
+
+    // Detecção simples de DevTools (largura/altura + tempo)
+    let openFlag = false;
+    const guard = document.getElementById('guard');
+    function checkDevtools() {
+      // Heurísticas simples (não infalíveis)
+      const threshold = 160; // barra de devtools comum
+      const suspicious = (outerWidth - innerWidth > threshold) || (outerHeight - innerHeight > threshold);
+      if (suspicious && !openFlag) {
+        openFlag = true;
+        guard.style.display = 'flex';
+        document.documentElement.style.filter = 'blur(2px)';
+        // Desativa interação
+        ['click','keydown','keyup','pointerdown','pointerup','contextmenu'].forEach(t => addEventListener(t, kill, true));
+      }
+    }
+    setInterval(checkDevtools, 600);
+
+    // Pequena ofuscação de strings sensíveis (exemplo simples)
+    // Evita "buscar no HTML" por palavras comuns
+    (function(){
+      const map = { w:'wa', dot:'.', me:'me', slash:'/' };
+      // Exemplo de reconstrução preguiçosa (não precisa pois já colocamos href estático)
+      // Mantido como demonstração para futuras rotas secretas.
+    })();
+  </script>
+</body>
+</html>
